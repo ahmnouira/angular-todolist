@@ -1,3 +1,6 @@
+// this file is required to start the app, entry point
+// select the platform used, [ionic, web app developement ]
+
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
