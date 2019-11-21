@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import {Model, ToDoItem} from "./model";
-
-console.log(Model);
+import { Model, ToDoItem } from "./model";
 
 @Component({
   selector: 'app-todo',
@@ -10,25 +8,23 @@ console.log(Model);
 })
 
 export class AppComponent {
-  title = 'proAngular6';
   model = new Model();
 
   // return the user name form the model
-  getName() {
+  getName() : string {
     return this.model.user;
   }
 
-  // return the 'items' from the model
-  getToDoList() {
-      // return this.model.items;
-
-    return this.model.items.filter(item => !item.done);
+  // return the 'items' from the model not done
+  getToDoList() : ToDoItem[] {
+    return this.model.items.filter((item : ToDoItem ) => !item.done);
 }
 
-    addItem(newItem) {
-      if (newItem !="") {
-       return this.model.items.push(new ToDoItem(newItem, false));
-      }
+  // add new item
+  addItem(newItem : string) : number {
+    if (newItem !="") {
+      return this.model.items.push(new ToDoItem(newItem, false));
     }
+  }
 
 }
